@@ -16,15 +16,19 @@ namespace Infra.Maps
             builder.Property(e => e.Id)
                    .HasColumnName("ID_PRODUCT");
 
-
-            builder.Property(e => e.NomeProduto)
+            builder.Property(e => e.Name)
                    .HasColumnName("Nome_Produto")
                    .HasColumnType("varchar(40)")
                    .IsRequired();
 
-            builder.HasOne(e => e.usuario)
-                .WithMany(e => e.ColecaoProdutos)
-                .HasForeignKey(e => e.IdUsuario)
+            builder.Property(e => e.Price)
+                   .HasColumnName("Nome_Produto")
+                   .HasColumnType("varchar(40)")
+                   .IsRequired();
+
+            builder.HasOne(e => e.Category)
+                .WithMany(e => e.Products)
+                .HasForeignKey(e => e.IdCategory)
                 .IsRequired();
         }
     }

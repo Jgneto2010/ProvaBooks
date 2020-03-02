@@ -3,3 +3,7 @@ D:\NewProjet\TesteAplication\Infra\bin\Debug\netcoreapp3.1\Infra.dll
 D:\NewProjet\TesteAplication\Infra\obj\Debug\netcoreapp3.1\Infra.csprojAssemblyReference.cache
 D:\NewProjet\TesteAplication\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfoInputs.cache
 D:\NewProjet\TesteAplication\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfo.cs
+C:\Users\joao.neto\Documents\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csprojAssemblyReference.cache
+C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfoInputs.cache
+C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfo.cs

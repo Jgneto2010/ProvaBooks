@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\TesteAplication\\TesteAplication.csproj": {}
+    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\TesteAplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj": {
+    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\jgnet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jgnet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\joao.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -55,25 +57,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Infra\\Infra.csproj": {
+    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Infra\\Infra.csproj",
+        "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj",
         "projectName": "Infra",
-        "projectPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Infra\\Infra.csproj",
-        "packagesPath": "C:\\Users\\jgnet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Infra\\obj\\",
+        "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj",
+        "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jgnet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\joao.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -85,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj"
+              "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj"
               }
             }
           }
@@ -100,7 +104,15 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
               "version": "[3.1.2, )"
             }
@@ -120,25 +132,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\TesteAplication\\TesteAplication.csproj": {
+    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\TesteAplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
+        "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
         "projectName": "TesteAplication",
-        "projectPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
-        "packagesPath": "C:\\Users\\jgnet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\TesteAplication\\obj\\",
+        "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
+        "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jgnet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\joao.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -150,11 +164,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Domain\\Domain.csproj"
+              "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Infra\\Infra.csproj": {
-                "projectPath": "C:\\Users\\jgnet\\OneDrive\\Documentos\\ProvaBooks\\Infra\\Infra.csproj"
+              "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj": {
+                "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj"
               }
             }
           }
@@ -167,6 +181,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -185,7 +205,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,9 +9,12 @@ namespace Domain.Entities
         public Category(string name)
         {
             Name = name;
+            Id = Guid.NewGuid();
         }
         public Category(){}
         public string Name { get; private set; }
+        public List<Product> Products { get; set; }
+        public Guid IdProduct { get; set; }
     }
 
 }
