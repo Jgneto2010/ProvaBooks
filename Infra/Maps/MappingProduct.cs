@@ -17,12 +17,12 @@ namespace Infra.Maps
                    .HasColumnName("ID_PRODUCT");
 
             builder.Property(e => e.Name)
-                   .HasColumnName("Nome_Produto")
+                   .HasColumnName("Name_Product")
                    .HasColumnType("varchar(40)")
                    .IsRequired();
 
             builder.Property(e => e.Price)
-                   .HasColumnName("Nome_Produto")
+                   .HasColumnName("Price")
                    .HasColumnType("varchar(40)")
                    .IsRequired();
 

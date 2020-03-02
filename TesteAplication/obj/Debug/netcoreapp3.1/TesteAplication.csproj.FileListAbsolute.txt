@@ -12,6 +12,7 @@ C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -50,5 +51,9 @@ C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\obj\Debug\netcoreapp3.1\
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\obj\Debug\netcoreapp3.1\TesteAplication.csproj.CopyComplete
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\obj\Debug\netcoreapp3.1\TesteAplication.dll
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\obj\Debug\netcoreapp3.1\TesteAplication.pdb
-C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\obj\Debug\netcoreapp3.1\TesteAplication.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\joao.neto\Documents\ProvaBooks\TesteAplication\obj\Debug\netcoreapp3.1\TesteAplication.MvcApplicationPartsAssemblyInfo.cache
