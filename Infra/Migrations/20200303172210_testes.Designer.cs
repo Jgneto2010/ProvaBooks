@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200302130310_testes")]
+    [Migration("20200303172210_testes")]
     partial class testes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,14 +51,14 @@ namespace Infra.Migrations
                     b.Property<Guid>("IdCategory")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Name_Product")
                         .IsRequired()
-                        .HasColumnName("Nome_Produto")
+                        .HasColumnName("Name_Product")
                         .HasColumnType("varchar(40)");
 
                     b.Property<string>("Price")
                         .IsRequired()
-                        .HasColumnName("Nome_Produto")
+                        .HasColumnName("Price")
                         .HasColumnType("varchar(40)");
 
                     b.HasKey("Id");

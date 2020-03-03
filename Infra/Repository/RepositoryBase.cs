@@ -4,6 +4,7 @@ using Infra.Contexto;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,14 +19,10 @@ namespace Infra.Repository
         protected RepositoryBase(Context context)
         {
             this.context = context;
+            DbSet = context.Set<T>();
         }
 
         public IEnumerable<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T GetById(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -46,6 +43,10 @@ namespace Infra.Repository
         public Task<int> SaveChanges()
         {
             return context.SaveChangesAsync();
+        }
+        public Task<T> GetById(Guid id)
+        {
+            return DbSet.Where(c => c.Id == id).FirstOrDefaultAsync();
         }
     }
 }

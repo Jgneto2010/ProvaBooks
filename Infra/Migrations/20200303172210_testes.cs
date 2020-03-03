@@ -25,7 +25,8 @@ namespace Infra.Migrations
                 columns: table => new
                 {
                     ID_PRODUCT = table.Column<Guid>(nullable: false),
-                    Nome_Produto = table.Column<string>(type: "varchar(40)", nullable: false),
+                    Name_Product = table.Column<string>(type: "varchar(40)", nullable: false),
+                    Price = table.Column<string>(type: "varchar(40)", nullable: false),
                     IdCategory = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>

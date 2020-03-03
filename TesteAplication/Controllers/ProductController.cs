@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -16,8 +14,9 @@ namespace TesteAplication.Controllers
     {
         [HttpPost]
         [Route("addProduct")]
-        public async Task<IActionResult> Post([FromServices]IProductRepository repositorio, [FromBody]AddProductsModels productModel)
+        public async Task<IActionResult> Post([FromServices]IProductRepository repositorio, [FromBody]AddProductsModels productModel, [FromRoute] Guid idCategory)
         {
+
             var prod = new Product(productModel.Name, productModel.Price);
             await repositorio.Add(prod);
             await repositorio.SaveChanges();

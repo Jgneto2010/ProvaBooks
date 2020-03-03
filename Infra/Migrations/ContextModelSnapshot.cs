@@ -49,14 +49,14 @@ namespace Infra.Migrations
                     b.Property<Guid>("IdCategory")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Name_Product")
                         .IsRequired()
-                        .HasColumnName("Nome_Produto")
+                        .HasColumnName("Name_Product")
                         .HasColumnType("varchar(40)");
 
                     b.Property<string>("Price")
                         .IsRequired()
-                        .HasColumnName("Nome_Produto")
+                        .HasColumnName("Price")
                         .HasColumnType("varchar(40)");
 
                     b.HasKey("Id");
