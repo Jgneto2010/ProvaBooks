@@ -19,46 +19,7 @@ namespace Infra.Repository
             _context = context;
         }
 
-        public void Add(Product obj)
-        {
-            _context.Products.Add(obj);
-        }
-
-        public IEnumerable<Product> GetAll()
-        {
-            return _context.Products.ToList();
-        }
-
-        public Product GetById(Guid id)
-        {
-            return _context.Products.Where(c => c.Id == id).First();
-        }
-
-        public Product ObterProdutoPeloNome(string name)
-        {
-            return _context.Products.Where(c => c.Name == name).First();
-        }
-
-        public Product ObterPeloId(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public int SaveChanges()
-        {
-            return _context.SaveChanges();
-        }
-
-        public void UpDate(Product obj)
-        {
-            _context.Products.Update(obj);
-        }
-
-        public Task<Product> GetByName(string nomeAplicacao)
-        {
-            throw new NotImplementedException();
-        }
+       
 
     }
        

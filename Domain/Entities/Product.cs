@@ -6,11 +6,10 @@ namespace Domain.Entities
 {
     public class Product : Entity
     {
-        public Product(string name, decimal price, Category category)
+        public Product(string name, decimal price)
         {
             Name = name;
             Price = price;
-            Category = category;
             Id = Guid.NewGuid();
         }
         public Product(){}
