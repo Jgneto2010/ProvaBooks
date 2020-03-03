@@ -1346,6 +1346,9 @@
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.2"
+        },
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -5135,11 +5138,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
+      "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
       "projectName": "TesteAplication",
-      "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
+      "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\TesteAplication\\TesteAplication.csproj",
       "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\TesteAplication\\obj\\",
+      "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\TesteAplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -5160,11 +5163,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj"
+            "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj": {
-              "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Infra\\Infra.csproj"
+            "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Infra\\Infra.csproj": {
+              "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Infra\\Infra.csproj"
             }
           }
         }

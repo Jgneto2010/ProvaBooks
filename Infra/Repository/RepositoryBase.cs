@@ -1,9 +1,11 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
 using Infra.Contexto;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Infra.Repository
 {
@@ -11,15 +13,11 @@ namespace Infra.Repository
         where T : Entity
     {
         private Context context;
+        protected readonly DbSet<T> DbSet;
 
         protected RepositoryBase(Context context)
         {
             this.context = context;
-        }
-
-        public void Add(T obj)
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<T> GetAll()
@@ -37,14 +35,17 @@ namespace Infra.Repository
             throw new NotImplementedException();
         }
 
-        public int SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
-
         public void UpDate(T obj)
         {
             throw new NotImplementedException();
+        }
+        public ValueTask<Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<T>> Add(T obj)
+        {
+            return DbSet.AddAsync(obj);
+        }
+        public Task<int> SaveChanges()
+        {
+            return context.SaveChangesAsync();
         }
     }
 }

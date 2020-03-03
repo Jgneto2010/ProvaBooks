@@ -16,3 +16,16 @@ C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.Asse
 C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csproj.CopyComplete
 C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.dll
 C:\Users\joao.neto\Documents\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.pdb
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.deps.json
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.runtimeconfig.json
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.runtimeconfig.dev.json
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.dll
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.pdb
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csprojAssemblyReference.cache
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfoInputs.cache
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfo.cs
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csproj.CopyComplete
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.dll
+C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj": {}
+    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj": {
+    "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\joao.neto\\Documents\\ProvaBooks\\ProvaBooks\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
