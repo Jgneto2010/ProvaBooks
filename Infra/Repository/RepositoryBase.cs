@@ -48,5 +48,10 @@ namespace Infra.Repository
         {
             return DbSet.Where(c => c.Id == id).FirstOrDefaultAsync();
         }
+
+        public Task AddProd(Guid idCategory, Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

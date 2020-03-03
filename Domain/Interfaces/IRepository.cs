@@ -16,5 +16,6 @@ namespace Domain.Interfaces
         void UpDate(T obj);
         void Remove(Guid id);
         Task<int> SaveChanges();
+        Task AddProd(Guid idCategory, Product product);
     }
 }
