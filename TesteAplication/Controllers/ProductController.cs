@@ -45,8 +45,7 @@ namespace TesteAplication.Controllers
             result.EditProduct(
             upDateProductModels.Name,
             upDateProductModels.Price,
-            upDateProductModels.CategoryId,
-            upDateProductModels.Id);
+            upDateProductModels.CategoryId);
            
             productRepository.UpDate(result);
             await productRepository.SaveChanges();
@@ -56,9 +55,15 @@ namespace TesteAplication.Controllers
 
         [HttpDelete]
         [Route("Product/{id:guid}")]
-        public async Task<IActionResult> Remove(Guid id)
+        public async Task<IActionResult> Remove([FromServices]IProductRepository productRepository, Guid id )
         {
+            await productRepository.Remove(id);
+            await productRepository.SaveChanges();
+
+            return  Ok();
            
         }
+
+
     }
 }

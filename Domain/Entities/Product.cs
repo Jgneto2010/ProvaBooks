@@ -18,13 +18,11 @@ namespace Domain.Entities
         public Guid IdCategory { get; set; }
         public Category Category { get; set; }
 
-        public void EditProduct(string name, decimal price, Guid idcategory, Guid id)
+        public void EditProduct(string name, decimal price, Guid idcategory)
         {
             Name = name;
             Price = price;
-            Id = id;
             IdCategory = idcategory;
-            Id = id;
         }
 
     }

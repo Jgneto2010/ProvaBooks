@@ -27,11 +27,12 @@ namespace Infra.Repository
             throw new NotImplementedException();
         }
 
-        public void Remove(Guid id)
+        public async Task Remove(Guid id)
         {
-            throw new NotImplementedException();
+            var product = await GetById(id);
+            DbSet.Remove(product);
         }
-        
+
         public ValueTask<Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<T>> Add(T obj)
         {
             return DbSet.AddAsync(obj);
@@ -48,5 +49,6 @@ namespace Infra.Repository
         {
             DbSet.Update(obj);
         }
+        
     }
 }

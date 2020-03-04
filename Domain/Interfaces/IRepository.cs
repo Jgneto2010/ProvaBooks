@@ -14,7 +14,7 @@ namespace Domain.Interfaces
         ValueTask<EntityEntry<T>> Add(T obj);
         Task<T> GetById(Guid id);
         IEnumerable<T> GetAll();
-        void Remove(Guid id);
+        Task Remove(Guid id);
         Task<int> SaveChanges();
         void UpDate(T obj);
 
