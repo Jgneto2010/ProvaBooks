@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace TesteAplication.ViewerModel
 {
-    public class AddProductsModels
+    public class UpDateProductModels 
     {
+        
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public Guid IdCategory { get; set; }
+        public Guid CategoryId { get; set; }
 
 
     }

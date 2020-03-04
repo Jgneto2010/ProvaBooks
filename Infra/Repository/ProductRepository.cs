@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using static Infra.Contexto.Context;
@@ -19,8 +20,10 @@ namespace Infra.Repository
             _context = context;
         }
 
-       
-
+        public Task<List<TResult>> ListAll<TResult>(Expression<Func<Product, TResult>> selector)
+        {
+            return DbSet.Select(selector).ToListAsync();
+        }
     }
        
     

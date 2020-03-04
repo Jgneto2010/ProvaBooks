@@ -31,11 +31,7 @@ namespace Infra.Repository
         {
             throw new NotImplementedException();
         }
-
-        public void UpDate(T obj)
-        {
-            throw new NotImplementedException();
-        }
+        
         public ValueTask<Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<T>> Add(T obj)
         {
             return DbSet.AddAsync(obj);
@@ -48,10 +44,9 @@ namespace Infra.Repository
         {
             return DbSet.Where(c => c.Id == id).FirstOrDefaultAsync();
         }
-
-        public Task AddProd(Guid idCategory, Product product)
+        public virtual void UpDate(T obj)
         {
-            throw new NotImplementedException();
+            DbSet.Update(obj);
         }
     }
 }

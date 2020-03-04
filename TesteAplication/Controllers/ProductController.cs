@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -14,18 +15,40 @@ namespace TesteAplication.Controllers
     {
         [HttpPost]
         [Route("addProduct")]
-        public async Task<IActionResult> Post([FromServices]IProductRepository repositorio, [FromBody]AddProductsModels productModel, [FromRoute] Guid idCategory)
+        public async Task<IActionResult> Post([FromServices]IProductRepository productRepository, [FromServices] ICategoryRepository categoryRepository, [FromBody]AddProductsModels productModel)
         {
-            var result = await repositorio.GetById(idCategory);
+            var result = await categoryRepository.GetById(productModel.IdCategory);
+            var prod = new Product(productModel.Name, productModel.Price);
             
             if (result == default)
                 return NotFound();
-
+            prod.IdCategory = result.Id;
             
-            var prod = new Product(productModel.Name, productModel.Price);
-            await repositorio.AddProd(idCategory, prod);
-            await repositorio.SaveChanges();
+            await productRepository.Add(prod);
+            await productRepository.SaveChanges();
             return Created($"api/aplicacao/{prod.Name}", new {prod.Price });
+        }
+
+        [HttpGet]
+        [Route("buscarListaProdutos")]
+        public async Task<IEnumerable<ListProductModel>> Get([FromServices] IProductRepository repositorio)
+        {
+            return await repositorio.ListAll(x => new ListProductModel { Id = x.Id, Name = x.Name });
+        }
+
+        [HttpPut]
+        [Route("Alterar/Product")]
+        public async Task<IActionResult> Put([FromServices]IProductRepository productRepository, [FromBody]UpDateProductModels upDateProductModels)
+        {
+            var result = await productRepository.GetById(upDateProductModels.Id);
+            var productCommand = new Product(upDateProductModels.Name, upDateProductModels.Price);
+
+            productCommand.Id = result.Id;
+
+            await productRepository.Add(productCommand);
+            await productRepository.SaveChanges();
+            return Created($"api/aplicacao/{productCommand.Name}", new { productCommand.Price, productCommand.Id, productCommand.Category });
+
         }
     }
 }

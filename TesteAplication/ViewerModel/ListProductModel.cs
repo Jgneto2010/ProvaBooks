@@ -1,17 +1,14 @@
-﻿using Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace TesteAplication.ViewerModel
 {
-    public class AddProductsModels
+    public class ListProductModel
     {
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public Guid IdCategory { get; set; }
-
-
+        public Guid Id { get; set; }
+       
     }
 }
