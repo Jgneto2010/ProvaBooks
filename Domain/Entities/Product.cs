@@ -23,8 +23,8 @@ namespace Domain.Entities
             Name = name;
             Price = price;
             Id = id;
-            IdCategory = new Guid();
-            Id = new Guid();
+            IdCategory = idcategory;
+            Id = id;
         }
 
     }

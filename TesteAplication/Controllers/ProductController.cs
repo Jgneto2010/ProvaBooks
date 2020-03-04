@@ -26,7 +26,7 @@ namespace TesteAplication.Controllers
             
             await productRepository.Add(prod);
             await productRepository.SaveChanges();
-            return Created($"api/aplicacao/{prod.Id}", new {prod.Price, prod.Name, prod.Id });
+            return Created($"api/product/{prod.Id}", new {prod.Price, prod.Name, prod.Id });
         }
 
         [HttpGet]
@@ -47,14 +47,18 @@ namespace TesteAplication.Controllers
             upDateProductModels.Price,
             upDateProductModels.CategoryId,
             upDateProductModels.Id);
-
-            result.Id = new Guid();
-            result.IdCategory = new Guid();
            
             productRepository.UpDate(result);
             await productRepository.SaveChanges();
-            return Created($"api/product/{result.Name}", new { result.Id, result.IdCategory, result.Price, result.Name });
+            return Created($"api/product/{result.Id}", new { result.Id, result.IdCategory, result.Price, result.Name });
 
+        }
+
+        [HttpDelete]
+        [Route("Product/{id:guid}")]
+        public async Task<IActionResult> Remove(Guid id)
+        {
+           
         }
     }
 }
