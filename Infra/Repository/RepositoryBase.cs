@@ -26,7 +26,7 @@ namespace Infra.Repository
         {
             throw new NotImplementedException();
         }
-
+        
         public async Task Remove(Guid id)
         {
             var product = await GetById(id);

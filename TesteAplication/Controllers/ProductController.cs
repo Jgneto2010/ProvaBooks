@@ -54,13 +54,14 @@ namespace TesteAplication.Controllers
         }
 
         [HttpDelete]
-        [Route("Product/{id:guid}")]
-        public async Task<IActionResult> Remove([FromServices]IProductRepository productRepository, Guid id )
+        [Route("remover")]
+        public async Task<IActionResult> RemoveDados([FromServices]IProductRepository productRepository, Guid id )
         {
+            await productRepository.GetById(id);
             await productRepository.Remove(id);
             await productRepository.SaveChanges();
 
-            return  Ok();
+             return  Ok();
            
         }
 
