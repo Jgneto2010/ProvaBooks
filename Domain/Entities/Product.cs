@@ -18,5 +18,14 @@ namespace Domain.Entities
         public Guid IdCategory { get; set; }
         public Category Category { get; set; }
 
+        public void EditProduct(string name, decimal price, Guid idcategory, Guid id)
+        {
+            Name = name;
+            Price = price;
+            Id = id;
+            IdCategory = new Guid();
+            Id = new Guid();
+        }
+
     }
 }

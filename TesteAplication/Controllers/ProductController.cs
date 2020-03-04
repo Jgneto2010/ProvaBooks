@@ -26,7 +26,7 @@ namespace TesteAplication.Controllers
             
             await productRepository.Add(prod);
             await productRepository.SaveChanges();
-            return Created($"api/aplicacao/{prod.Name}", new {prod.Price });
+            return Created($"api/aplicacao/{prod.Id}", new {prod.Price, prod.Name, prod.Id });
         }
 
         [HttpGet]
@@ -41,13 +41,19 @@ namespace TesteAplication.Controllers
         public async Task<IActionResult> Put([FromServices]IProductRepository productRepository, [FromBody]UpDateProductModels upDateProductModels)
         {
             var result = await productRepository.GetById(upDateProductModels.Id);
-            var productCommand = new Product(upDateProductModels.Name, upDateProductModels.Price);
 
-            productCommand.Id = result.Id;
+            result.EditProduct(
+            upDateProductModels.Name,
+            upDateProductModels.Price,
+            upDateProductModels.CategoryId,
+            upDateProductModels.Id);
 
-            await productRepository.Add(productCommand);
+            result.Id = new Guid();
+            result.IdCategory = new Guid();
+           
+            productRepository.UpDate(result);
             await productRepository.SaveChanges();
-            return Created($"api/aplicacao/{productCommand.Name}", new { productCommand.Price, productCommand.Id, productCommand.Category });
+            return Created($"api/product/{result.Name}", new { result.Id, result.IdCategory, result.Price, result.Name });
 
         }
     }
