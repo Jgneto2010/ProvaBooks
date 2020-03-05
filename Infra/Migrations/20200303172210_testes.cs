@@ -13,7 +13,6 @@ namespace Infra.Migrations
                 {
                     ID_CATEGORY = table.Column<Guid>(nullable: false),
                     Name_CATEGORY = table.Column<string>(type: "varchar(40)", nullable: false),
-                    IdProduct = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {

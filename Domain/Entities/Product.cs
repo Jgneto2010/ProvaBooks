@@ -24,6 +24,5 @@ namespace Domain.Entities
             Price = price;
             IdCategory = idcategory;
         }
-
     }
 }

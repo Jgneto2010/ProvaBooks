@@ -19,14 +19,14 @@ namespace TesteAplication.Controllers
         {
             var result = await categoryRepository.GetById(productModel.IdCategory);
             var prod = new Product(productModel.Name, productModel.Price);
-            
+
             if (result == default)
                 return NotFound();
             prod.IdCategory = result.Id;
-            
+
             await productRepository.Add(prod);
             await productRepository.SaveChanges();
-            return Created($"api/product/{prod.Id}", new {prod.Price, prod.Name, prod.Id });
+            return Created($"api/product/{prod.Id}", new { prod.Price, prod.Name, prod.Id });
         }
 
         [HttpGet]
@@ -46,7 +46,7 @@ namespace TesteAplication.Controllers
             upDateProductModels.Name,
             upDateProductModels.Price,
             upDateProductModels.CategoryId);
-           
+
             productRepository.UpDate(result);
             await productRepository.SaveChanges();
             return Created($"api/product/{result.Id}", new { result.Id, result.IdCategory, result.Price, result.Name });
@@ -55,16 +55,28 @@ namespace TesteAplication.Controllers
 
         [HttpDelete]
         [Route("remover")]
-        public async Task<IActionResult> RemoveDados([FromServices]IProductRepository productRepository, Guid id )
+        public async Task<IActionResult> RemoveDados([FromServices]IProductRepository productRepository, Guid id)
         {
             await productRepository.GetById(id);
             await productRepository.Remove(id);
             await productRepository.SaveChanges();
 
-             return  Ok();
-           
+            return Ok();
+
         }
 
+        [HttpGet]
+        [Route("productCategory")]
+        public async Task<IActionResult> Get([FromServices] IProductRepository repositorio, Guid id)
+        {
+            var rca = await repositorio.Buscar(id);
 
+            return Ok(new GetProductCategory 
+            { 
+             IdCategory = rca.IdCategory,
+             NameCategory = rca.Category.Name
+            });
+
+        }
     }
 }

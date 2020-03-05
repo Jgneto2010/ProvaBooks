@@ -10,5 +10,6 @@ namespace Domain.Interfaces
     public interface IProductRepository : IRepository<Product>
     {
         Task<List<TResult>> ListAll<TResult>(Expression<Func<Product, TResult>> selector);
+        Task<Product> Buscar(Guid id);
     }
 }
