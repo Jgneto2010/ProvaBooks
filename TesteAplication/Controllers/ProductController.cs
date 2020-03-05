@@ -12,7 +12,7 @@ namespace TesteAplication.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
-    {   //esse metodo adiciona Um produto ao estoque
+    {   //Esse metodo adiciona Um produto ao estoque
         [HttpPost]
         [Route("addProduct")]
         public async Task<IActionResult> Post([FromServices]IProductRepository productRepository, [FromServices] ICategoryRepository categoryRepository, [FromBody]AddProductsModels productModel)
@@ -74,7 +74,8 @@ namespace TesteAplication.Controllers
             return Ok(new GetProductCategory 
             { 
              IdCategory = rca.IdCategory,
-             NameCategory = rca.Category.Name
+             NameCategory = rca.Category.Name,
+             Nameproducts = rca.Name
             });
 
         }

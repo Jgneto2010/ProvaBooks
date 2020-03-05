@@ -9,6 +9,7 @@ namespace TesteAplication.ViewerModel
     {
         public string NameCategory { get; set; }
         public Guid IdCategory { get; set; }
+        public string Nameproducts { get; set; }
 
     }
 }
