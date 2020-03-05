@@ -14,6 +14,7 @@ namespace TesteAplication.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
+        //Esse metodo Adiciona Uma categoria
         [HttpPost]
         [Route("addCategory")]
         public async Task<IActionResult> Post([FromServices]ICategoryRepository repositorio, [FromBody]AddCategorysModels categoryModel)
@@ -23,7 +24,42 @@ namespace TesteAplication.Controllers
             
             await repositorio.Add(prod);
             await repositorio.SaveChanges();
-            return Created($"api/aplicacao/{prod.Name}", new { prod.Id });
+            return Created($"api/category/{prod.Name}", new { prod.Id });
+        }
+        //Esse metodo traz a Lista de categorias
+        [HttpGet]
+        [Route("searchListCategorys")]
+        public async Task<IEnumerable<listCategoryModels>> Get([FromServices] ICategoryRepository repositorio)
+        {
+            return await repositorio.ListAll(x => new listCategoryModels { Id = x.Id, Name = x.Name });
+        }
+
+        //Esse metodo Remove Um Objeto dado seu Id
+        [HttpDelete]
+        [Route("removeCategorys")]
+        public async Task<IActionResult> RemoveDados([FromServices]ICategoryRepository categoryRepository, Guid id)
+        {
+            await categoryRepository.GetById(id);
+            await categoryRepository.Remove(id);
+            await categoryRepository.SaveChanges();
+
+            return Ok();
+
+        }
+        // Esse metodo altera um objeto e Salva No Banco
+        [HttpPut]
+        [Route("changeCategory")]
+        public async Task<IActionResult> Put([FromServices]ICategoryRepository categoryRepository, [FromBody]UpdateCategoryModels upDateCategoryModels)
+        {
+            var result = await categoryRepository.GetById(upDateCategoryModels.Id);
+
+            result.EditCategory(
+            upDateCategoryModels.Name);
+
+            categoryRepository.UpDate(result);
+            await categoryRepository.SaveChanges();
+            return Created($"api/category/{result.Id}", new { result.Id, result.Name });
+
         }
     }
 }

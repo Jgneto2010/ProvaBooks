@@ -12,7 +12,7 @@ namespace TesteAplication.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
-    {
+    {   //esse metodo adiciona Um produto ao estoque
         [HttpPost]
         [Route("addProduct")]
         public async Task<IActionResult> Post([FromServices]IProductRepository productRepository, [FromServices] ICategoryRepository categoryRepository, [FromBody]AddProductsModels productModel)
@@ -28,16 +28,16 @@ namespace TesteAplication.Controllers
             await productRepository.SaveChanges();
             return Created($"api/product/{prod.Id}", new { prod.Price, prod.Name, prod.Id });
         }
-
+        //Esse metodo Traz A Lista com todos os produtos
         [HttpGet]
-        [Route("buscarListaProdutos")]
+        [Route("searchListProducts")]
         public async Task<IEnumerable<ListProductModel>> Get([FromServices] IProductRepository repositorio)
         {
             return await repositorio.ListAll(x => new ListProductModel { Id = x.Id, Name = x.Name });
         }
-
+        // Esse metodo altera um objeto e Salva No Banco
         [HttpPut]
-        [Route("Alterar/Product")]
+        [Route("change/Product")]
         public async Task<IActionResult> Put([FromServices]IProductRepository productRepository, [FromBody]UpDateProductModels upDateProductModels)
         {
             var result = await productRepository.GetById(upDateProductModels.Id);
@@ -52,9 +52,9 @@ namespace TesteAplication.Controllers
             return Created($"api/product/{result.Id}", new { result.Id, result.IdCategory, result.Price, result.Name });
 
         }
-
+        //Esse metodo Remove Um Objeto dado seu Id
         [HttpDelete]
-        [Route("remover")]
+        [Route("removeProduct")]
         public async Task<IActionResult> RemoveDados([FromServices]IProductRepository productRepository, Guid id)
         {
             await productRepository.GetById(id);
@@ -64,7 +64,7 @@ namespace TesteAplication.Controllers
             return Ok();
 
         }
-
+        //Esse Metodo traz Um produto com sua categoria
         [HttpGet]
         [Route("productCategory")]
         public async Task<IActionResult> Get([FromServices] IProductRepository repositorio, Guid id)
