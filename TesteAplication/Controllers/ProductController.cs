@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Domain.Entities;
+using Domain.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain.Entities;
-using Domain.Interfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using TesteAplication.ViewerModel;
 
 namespace TesteAplication.Controllers

@@ -34,7 +34,7 @@ namespace TesteAplication
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CGPLAN Services Monitor", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Teste Aplication", Version = "v1" });
             });
         }
 
