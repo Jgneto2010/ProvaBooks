@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infra.Maps;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Infra.Contexto
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<ApplicationUser>
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
         public DbSet<Category> Categoryes { get; set; }

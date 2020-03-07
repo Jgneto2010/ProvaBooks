@@ -29,3 +29,16 @@ C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1
 C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csproj.CopyComplete
 C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.dll
 C:\Users\joao.neto\Documents\ProvaBooks\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.pdb
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.deps.json
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.runtimeconfig.json
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.runtimeconfig.dev.json
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.dll
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Infra.pdb
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csprojAssemblyReference.cache
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfoInputs.cache
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.AssemblyInfo.cs
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.csproj.CopyComplete
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.dll
+C:\Users\julia\Downloads\ProvaBooks-master\ProvaBooks-master\ProvaBooks\Infra\obj\Debug\netcoreapp3.1\Infra.pdb
