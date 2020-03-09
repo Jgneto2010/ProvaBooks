@@ -1584,7 +1584,10 @@
         },
         "runtime": {
           "bin/placeholder/Domain.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -5859,27 +5862,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joao.neto\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\julia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\Infra.csproj",
+      "projectUniqueName": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\Infra.csproj",
       "projectName": "Infra",
-      "projectPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\Infra.csproj",
-      "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\obj\\",
+      "projectPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\Infra.csproj",
+      "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\joao.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5891,8 +5887,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj"
+            "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj"
             }
           }
         }

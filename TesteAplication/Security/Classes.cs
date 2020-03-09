@@ -1,11 +1,9 @@
 ﻿namespace TesteAplication.Security
 {
-    public class AccessCredentials
+    public class User
     {
         public string UserID { get; set; }
         public string Password { get; set; }
-        public string RefreshToken { get; set; }
-        public string GrantType { get; set; }
     }
 
 
@@ -18,7 +16,7 @@
     {
         public string Audience { get; set; }
         public string Issuer { get; set; }
-        public int Seconds { get; set; }
+        public int Seconds { get; set; } = 200;
         public string Teste { get; set; }
     }
 

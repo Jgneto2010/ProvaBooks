@@ -26,7 +26,7 @@ namespace TesteAplication.Security
             _tokenConfigurations = tokenConfigurations;
         }
 
-        public bool ValidateCredentials(AccessCredentials credenciais)
+        public bool ValidateCredentials(User credenciais)
         {
             bool credenciaisValidas = false;
             if (credenciais != null && !String.IsNullOrWhiteSpace(credenciais.UserID))
@@ -54,13 +54,13 @@ namespace TesteAplication.Security
             return credenciaisValidas;
         }
 
-        public Token GenerateToken(AccessCredentials credenciais)
+        public Token GenerateToken(User user)
         {
             ClaimsIdentity identity = new ClaimsIdentity(
-                new GenericIdentity(credenciais.UserID, "Login"),
+                new GenericIdentity(user.UserID, "Login"),
                 new[] {
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, credenciais.UserID)
+                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserID)
                 }
             );
 

@@ -5,17 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TesteAplication.Security;
 using TesteAplication.ViewerModel;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using WebApiUsuarios.Models;
 
 namespace TesteAplication.Controllers
 {
@@ -26,7 +15,7 @@ namespace TesteAplication.Controllers
         [AllowAnonymous]
         [HttpPost]
         public object Post(
-            [FromBody]AccessCredentials credenciais,
+            [FromBody]User credenciais,
         [FromServices]AccessManager accessManager)
         {
             if (accessManager.ValidateCredentials(credenciais))
@@ -45,14 +34,28 @@ namespace TesteAplication.Controllers
 
         [HttpPost]
         [Route("registerUser")]
-        public async Task<ActionResult> CreateUser([FromServices]UserManager<ApplicationUser> userManager, [FromBody] RegisterUser registerUser, RegisterPasswordUser registerPasswordUser)
+        public async Task<ActionResult> CreateUser([FromServices]UserManager<ApplicationUser> userManager,
+                                                   [FromServices]AccessManager accessManager,
+                                                   [FromBody] RegisterUser registerPasswordUser)
         {
-            var user = new ApplicationUser(registerUser.FirstName, registerUser.LastName, registerUser.Telephone, registerUser.Email, registerUser.Address);
-            var result = await userManager.CreateAsync(user, registerPasswordUser.Password);
+            var user = new ApplicationUser
+            {
+                UserName = registerPasswordUser.UserName
+            };
+
+            var result =  userManager.CreateAsync(user, registerPasswordUser.Password).Result;
            
             if (result.Succeeded)
             {
-                return userManager.CreateSecurityTokenAsync(user);
+                var usuarioSAlvo = userManager.FindByNameAsync(user.UserName).Result;
+
+
+                var usuarioAcesso = new User();
+                usuarioAcesso.UserID = usuarioSAlvo.Id;
+                usuarioAcesso.Password = usuarioSAlvo.PasswordHash;
+
+                var resultado = accessManager.GenerateToken(usuarioAcesso);
+               return Created($"api/category/{resultado}", new { resultado });
             }
             else
             {
