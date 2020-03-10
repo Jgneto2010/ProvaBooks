@@ -88,7 +88,7 @@ namespace TesteAplication.Security
                 Created = dataCriacao.ToString("yyyy-MM-dd HH:mm:ss"),
                 Expiration = dataExpiracao.ToString("yyyy-MM-dd HH:mm:ss"),
                 AccessToken = token,
-                Message = "OK"
+                Message = "Ok"
             };
         }
     }

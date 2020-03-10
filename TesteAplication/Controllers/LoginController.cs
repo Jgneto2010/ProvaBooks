@@ -10,6 +10,7 @@ namespace TesteAplication.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    //Esse metodo valida um usuário e gera um token de acesso
     public class LoginController : ControllerBase
     {
         [AllowAnonymous]
@@ -31,7 +32,7 @@ namespace TesteAplication.Controllers
                 };
             }
         }
-
+        //Esse metodo registra um usuário no sistema gerando seu token de acesso 
         [HttpPost]
         [Route("registerUser")]
         public async Task<ActionResult> CreateUser([FromServices]UserManager<ApplicationUser> userManager,
@@ -64,7 +65,6 @@ namespace TesteAplication.Controllers
             {
                 return BadRequest("Usuário ou senha inválidos");
             }
-
             
         }
       
