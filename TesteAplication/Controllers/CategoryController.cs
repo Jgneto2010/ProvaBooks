@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace TesteAplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class CategoryController : ControllerBase
     {
         //Esse metodo Adiciona Uma categoria
         [HttpPost]
         [Route("addCategory")]
+      
         public async Task<IActionResult> Post([FromServices]ICategoryRepository repositorio, [FromBody]AddCategorysModels categoryModel)
         {
 

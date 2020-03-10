@@ -46,21 +46,21 @@ namespace TesteAplication
             var signingConfigurations = new SigningConfigurations();
             services.AddSingleton(signingConfigurations);
 
-            var tokenConfigurations = new TokenConfigurations();
+            var tokenConfigurations = new TokenConfigurations()
+            {
+                Audience = "Teste",
+                Issuer = "Teste",
+                Seconds = 36000,
+                Teste = "Teste"
+            };
             new ConfigureFromConfigurationOptions<TokenConfigurations>(
                 Configuration.GetSection("TokenConfigurations"))
                     .Configure(tokenConfigurations);
             services.AddSingleton(tokenConfigurations);
-
-
-
-
-
-
-
             services.AddJwtSecurity(signingConfigurations, tokenConfigurations);
-
+            
             services.AddControllers();
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Teste Aplication", Version = "v1" });
