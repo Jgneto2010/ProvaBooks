@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\Infra.csproj": {}
+    "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\Infra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj": {
+    "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\joao.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -73,18 +78,23 @@
         }
       }
     },
-    "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\Infra.csproj": {
+    "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\Infra.csproj",
+        "projectUniqueName": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\Infra.csproj",
         "projectName": "Infra",
-        "projectPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\Infra.csproj",
-        "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Infra\\obj\\",
+        "projectPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\Infra.csproj",
+        "packagesPath": "C:\\Users\\joao.neto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Infra\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\joao.neto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -96,8 +106,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\julia\\Downloads\\ProvaBooks-master\\ProvaBooks-master\\ProvaBooks\\Domain\\Domain.csproj"
+              "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\joao.neto\\ProjetosJoãoGarcia\\ProvaBooks\\Domain\\Domain.csproj"
               }
             }
           }

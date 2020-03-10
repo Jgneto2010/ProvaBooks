@@ -28,7 +28,6 @@ namespace TesteAplication.Security
 
         public bool ValidateCredentials(User credenciais)
         {
-            bool credenciaisValidas = false;
             if (credenciais != null && !String.IsNullOrWhiteSpace(credenciais.UserID))
             {
                 // Verifica a existência do usuário nas tabelas do
@@ -41,17 +40,20 @@ namespace TesteAplication.Security
                     var resultadoLogin = _signInManager
                         .CheckPasswordSignInAsync(userIdentity, credenciais.Password, false)
                         .Result;
-                    if (resultadoLogin.Succeeded)
-                    {
-                        // Verifica se o usuário em questão possui
-                        // a role Acesso-APIProdutos
-                        credenciaisValidas = _userManager.IsInRoleAsync(
-                            userIdentity, Roles.ROLE_API_PRODUTOS).Result;
-                    }
+
+
+                    return resultadoLogin.Succeeded;
+                    //if (resultadoLogin.Succeeded)
+                    //{
+                    //    //// Verifica se o usuário em questão possui
+                    //    //// a role Acesso-APIProdutos
+                    //    //credenciaisValidas = _userManager.IsInRoleAsync(
+                    //    //    userIdentity, Roles.ROLE_API_PRODUTOS).Result;
+                    //}
                 }
             }
 
-            return credenciaisValidas;
+            return false;
         }
 
         public Token GenerateToken(User user)

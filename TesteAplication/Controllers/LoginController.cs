@@ -16,7 +16,7 @@ namespace TesteAplication.Controllers
         [HttpPost]
         public object Post(
             [FromBody]User credenciais,
-        [FromServices]AccessManager accessManager)
+            [FromServices]AccessManager accessManager)
         {
             if (accessManager.ValidateCredentials(credenciais))
             {
@@ -36,15 +36,18 @@ namespace TesteAplication.Controllers
         [Route("registerUser")]
         public async Task<ActionResult> CreateUser([FromServices]UserManager<ApplicationUser> userManager,
                                                    [FromServices]AccessManager accessManager,
-                                                   [FromBody] RegisterUser registerPasswordUser)
+                                                   [FromBody] RegisterUser registerUser)
         {
             var user = new ApplicationUser
             {
-                UserName = registerPasswordUser.UserName
+                UserName = registerUser.UserName,
+                Email = registerUser.Email,
+                PhoneNumber = registerUser.PhoneNumber
+                
             };
 
-            var result =  userManager.CreateAsync(user, registerPasswordUser.Password).Result;
-           
+            var result = userManager.CreateAsync(user, registerUser.Password).Result;
+
             if (result.Succeeded)
             {
                 var usuarioSAlvo = userManager.FindByNameAsync(user.UserName).Result;
@@ -55,14 +58,16 @@ namespace TesteAplication.Controllers
                 usuarioAcesso.Password = usuarioSAlvo.PasswordHash;
 
                 var resultado = accessManager.GenerateToken(usuarioAcesso);
-               return Created($"api/category/{resultado}", new { resultado });
+                return  Created($"registerUser/{resultado}", new { resultado });
             }
             else
             {
                 return BadRequest("Usuário ou senha inválidos");
             }
-        }
 
+            
+        }
+      
 
     }
 }
