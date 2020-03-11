@@ -15,7 +15,7 @@ namespace TesteAplication.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-
        
+
     }
 }

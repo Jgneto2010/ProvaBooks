@@ -62,9 +62,14 @@ namespace TesteAplication.Security
                 new GenericIdentity(user.UserID, "Login"),
                 new[] {
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserID)
+                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserID),
+
+                        //Nova Claim
+                        new Claim(JwtRegisteredClaimNames.Email, user.Email)
+
+
                 }
-            );
+            ); ;
 
             DateTime dataCriacao = DateTime.Now;
             DateTime dataExpiracao = dataCriacao +

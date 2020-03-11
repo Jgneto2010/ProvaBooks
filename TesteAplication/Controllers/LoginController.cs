@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using TesteAplication.Security;
 using TesteAplication.ViewerModel;
@@ -49,6 +50,8 @@ namespace TesteAplication.Controllers
 
             var result = userManager.CreateAsync(user, registerUser.Password).Result;
 
+
+
             if (result.Succeeded)
             {
                 var usuarioSAlvo = userManager.FindByNameAsync(user.UserName).Result;
@@ -58,7 +61,11 @@ namespace TesteAplication.Controllers
                 usuarioAcesso.UserID = usuarioSAlvo.Id;
                 usuarioAcesso.Password = usuarioSAlvo.PasswordHash;
 
+                //await userManager.AddClaimAsync(user, new Claim("EmployeerName", "_Acesso"));
+               
                 var resultado = accessManager.GenerateToken(usuarioAcesso);
+
+                
                 return  Created($"registerUser/{resultado}", new { resultado });
             }
             else

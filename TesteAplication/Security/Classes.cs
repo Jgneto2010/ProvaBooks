@@ -4,6 +4,8 @@
     {
         public string UserID { get; set; }
         public string Password { get; set; }
+        //Nova Claim
+        public string Email { get; set; }
     }
 
 

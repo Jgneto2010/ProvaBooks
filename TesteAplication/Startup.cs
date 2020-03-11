@@ -58,7 +58,18 @@ namespace TesteAplication
                     .Configure(tokenConfigurations);
             services.AddSingleton(tokenConfigurations);
             services.AddJwtSecurity(signingConfigurations, tokenConfigurations);
-            
+
+
+
+            Implementando a Claim
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("OnlyEmployeers", policy => policy.RequireClaim("EmployeerName"));
+            });
+
+
+
+
             services.AddControllers();
            
             services.AddSwaggerGen(c =>

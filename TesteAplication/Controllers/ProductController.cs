@@ -16,6 +16,7 @@ namespace TesteAplication.Controllers
     {   //Esse metodo adiciona Um produto ao estoque
         [HttpPost]
         [Route("addProduct")]
+        [Authorize(Policy = "OnlyEmployeers")]
         public async Task<IActionResult> Post([FromServices]IProductRepository productRepository, [FromServices] ICategoryRepository categoryRepository, [FromBody]AddProductsModels productModel)
         {
             var result = await categoryRepository.GetById(productModel.IdCategory);
