@@ -39,6 +39,7 @@ namespace TesteAplication
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                             .AddEntityFrameworkStores<Context>()
+                            .AddRoles<IdentityRole>()
                             .AddDefaultTokenProviders();
 
             services.AddScoped<AccessManager>();
@@ -61,10 +62,12 @@ namespace TesteAplication
 
 
 
-            Implementando a Claim
+            //Implementando a Claim
             services.AddAuthorization(options =>
             {
+                options.AddPolicy("OnlyEmployeers", policy => policy.RequireClaim("EmployeerEmail"));
                 options.AddPolicy("OnlyEmployeers", policy => policy.RequireClaim("EmployeerName"));
+                options.AddPolicy("RequireAdministratorRole",policy => policy.RequireRole("Administrator"));
             });
 
 

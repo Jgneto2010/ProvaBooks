@@ -45,26 +45,20 @@ namespace TesteAplication.Controllers
                 UserName = registerUser.UserName,
                 Email = registerUser.Email,
                 PhoneNumber = registerUser.PhoneNumber
-                
             };
 
             var result = userManager.CreateAsync(user, registerUser.Password).Result;
 
-
-
             if (result.Succeeded)
             {
-                var usuarioSAlvo = userManager.FindByNameAsync(user.UserName).Result;
-
-
                 var usuarioAcesso = new User();
-                usuarioAcesso.UserID = usuarioSAlvo.Id;
-                usuarioAcesso.Password = usuarioSAlvo.PasswordHash;
+                usuarioAcesso.UserID = user.Id;
+                usuarioAcesso.Password = user.PasswordHash;
+                usuarioAcesso.Email = user.Email;
 
-                //await userManager.AddClaimAsync(user, new Claim("EmployeerName", "_Acesso"));
+                //await userManager.AddClaimAsync(user, new Claim("EmployeerEmail", "_Acesso"));
                
                 var resultado = accessManager.GenerateToken(usuarioAcesso);
-
                 
                 return  Created($"registerUser/{resultado}", new { resultado });
             }
@@ -74,7 +68,47 @@ namespace TesteAplication.Controllers
             }
             
         }
-      
+
+
+        [HttpPost]
+        [Route("registerAdmin")]
+        public async Task<ActionResult> CreateAdmin([FromServices]UserManager<ApplicationUser> userManager,
+                                                  [FromServices]AccessManager accessManager,
+                                                  [FromBody] RegisterAdmin registerAdmin)
+        {
+            var user = new ApplicationUser
+            {
+                UserName = registerAdmin.UserName,
+                Email = registerAdmin.Email,
+                PhoneNumber = registerAdmin.PhoneNumber,
+
+            };
+
+            var result = userManager.CreateAsync(user, registerAdmin.Password).Result;
+
+            if (result.Succeeded)
+            {
+                var usuarioSAlvo = userManager.FindByNameAsync(user.UserName).Result;
+
+                var usuarioAcesso = new User();
+                usuarioAcesso.UserID = usuarioSAlvo.Id;
+                usuarioAcesso.Password = usuarioSAlvo.PasswordHash;
+                usuarioAcesso.Email = usuarioSAlvo.Email;
+
+                await userManager.AddClaimAsync(user, new Claim("EmployeerEmail", "_Acesso"));
+                await userManager.AddToRoleAsync(user, ("Administrator"));
+
+                var resultado = accessManager.GenerateToken(usuarioAcesso);
+
+                return Created($"registerUser/{resultado}", new { resultado });
+            }
+            else
+            {
+                return BadRequest("Usuário ou senha inválidos");
+            }
+
+        }
+
 
     }
 }

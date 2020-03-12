@@ -61,12 +61,13 @@ namespace TesteAplication.Security
             ClaimsIdentity identity = new ClaimsIdentity(
                 new GenericIdentity(user.UserID, "Login"),
                 new[] {
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserID),
+                        //new Claim(JwtRegisteredClaimNames.Jti, user.UserID.ToString("N"),
+                        new Claim(JwtRegisteredClaimNames.NameId, user.UserID),
 
-                        //Nova Claim
-                        new Claim(JwtRegisteredClaimNames.Email, user.Email)
-
+                        ////Nova Claim
+                        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                        //Nova Role
+                        new Claim(ClaimTypes.Role, "Administrator")
 
                 }
             ); ;
