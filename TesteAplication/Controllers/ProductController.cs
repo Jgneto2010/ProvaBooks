@@ -16,7 +16,6 @@ namespace TesteAplication.Controllers
     {   //Esse metodo adiciona Um produto ao estoque
         [HttpPost]
         [Route("addProduct")]
-        [Authorize(Policy = "RequireAdministratorRole")]
         public async Task<IActionResult> Post([FromServices]IProductRepository productRepository, [FromServices] ICategoryRepository categoryRepository, [FromBody]AddProductsModels productModel)
         {
             var result = await categoryRepository.GetById(productModel.IdCategory);
@@ -40,6 +39,7 @@ namespace TesteAplication.Controllers
         // Esse metodo altera um objeto e Salva No Banco
         [HttpPut]
         [Route("change/Product")]
+        [Authorize(Policy = "RequireAdministratorRole")]
         public async Task<IActionResult> Put([FromServices]IProductRepository productRepository, [FromBody]UpDateProductModels upDateProductModels)
         {
             var result = await productRepository.GetById(upDateProductModels.Id);
@@ -57,6 +57,7 @@ namespace TesteAplication.Controllers
         //Esse metodo Remove Um Objeto dado seu Id
         [HttpDelete]
         [Route("removeProduct")]
+        [Authorize(Policy = "RequireAdministratorRole")]
         public async Task<IActionResult> RemoveDados([FromServices]IProductRepository productRepository, Guid id)
         {
             await productRepository.GetById(id);

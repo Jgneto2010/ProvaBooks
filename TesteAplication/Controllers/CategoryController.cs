@@ -38,6 +38,7 @@ namespace TesteAplication.Controllers
         //Esse metodo Remove Um Objeto dado seu Id
         [HttpDelete]
         [Route("removeCategorys")]
+        [Authorize(Policy = "RequireAdministratorRole")]
         public async Task<IActionResult> RemoveDados([FromServices]ICategoryRepository categoryRepository, Guid id)
         {
             await categoryRepository.GetById(id);
@@ -50,6 +51,7 @@ namespace TesteAplication.Controllers
         // Esse metodo altera um objeto e Salva No Banco
         [HttpPut]
         [Route("changeCategory")]
+        [Authorize(Policy = "RequireAdministratorRole")]
         public async Task<IActionResult> Put([FromServices]ICategoryRepository categoryRepository, [FromBody]UpdateCategoryModels upDateCategoryModels)
         {
             var result = await categoryRepository.GetById(upDateCategoryModels.Id);
