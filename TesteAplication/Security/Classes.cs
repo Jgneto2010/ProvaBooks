@@ -2,6 +2,10 @@
 {
     public class User
     {
+        public User()
+        {
+
+        }
         public string UserID { get; set; }
         public string Password { get; set; }
         //Nova Claim

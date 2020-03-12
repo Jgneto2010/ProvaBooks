@@ -41,7 +41,6 @@ namespace TesteAplication.Security
                         .CheckPasswordSignInAsync(userIdentity, credenciais.Password, false)
                         .Result;
 
-
                     return resultadoLogin.Succeeded;
                     //if (resultadoLogin.Succeeded)
                     //{
@@ -63,12 +62,49 @@ namespace TesteAplication.Security
                 new[] {
                         //new Claim(JwtRegisteredClaimNames.Jti, user.UserID.ToString("N"),
                         new Claim(JwtRegisteredClaimNames.NameId, user.UserID),
+                        ////Nova Claim
+                        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                }
+            ); ;
 
+            DateTime dataCriacao = DateTime.Now;
+            DateTime dataExpiracao = dataCriacao +
+                TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
+
+            var handler = new JwtSecurityTokenHandler();
+            var securityToken = handler.CreateToken(new SecurityTokenDescriptor
+            {
+                Issuer = _tokenConfigurations.Issuer,
+                Audience = _tokenConfigurations.Audience,
+                SigningCredentials = _signingConfigurations.SigningCredentials,
+                Subject = identity,
+                NotBefore = dataCriacao,
+                Expires = dataExpiracao
+            });
+            
+            var token = handler.WriteToken(securityToken);
+
+            return new Token()
+            {
+                Authenticated = true,
+                Created = dataCriacao.ToString("yyyy-MM-dd HH:mm:ss"),
+                Expiration = dataExpiracao.ToString("yyyy-MM-dd HH:mm:ss"),
+                AccessToken = token,
+                Message = "Ok"
+            };
+        }
+
+        public Token GenerateTokenAdmin(User user)
+        {
+            ClaimsIdentity identity = new ClaimsIdentity(
+                new GenericIdentity(user.UserID, "Login"),
+                new[] {
+                        //new Claim(JwtRegisteredClaimNames.Jti, user.UserID.ToString("N"),
+                        new Claim(JwtRegisteredClaimNames.NameId, user.UserID),
                         ////Nova Claim
                         new Claim(JwtRegisteredClaimNames.Email, user.Email),
                         //Nova Role
                         new Claim(ClaimTypes.Role, "Administrator")
-
                 }
             ); ;
 
@@ -97,5 +133,6 @@ namespace TesteAplication.Security
                 Message = "Ok"
             };
         }
+
     }
 }

@@ -55,8 +55,6 @@ namespace TesteAplication.Controllers
                 usuarioAcesso.UserID = user.Id;
                 usuarioAcesso.Password = user.PasswordHash;
                 usuarioAcesso.Email = user.Email;
-
-                //await userManager.AddClaimAsync(user, new Claim("EmployeerEmail", "_Acesso"));
                
                 var resultado = accessManager.GenerateToken(usuarioAcesso);
                 
@@ -68,7 +66,6 @@ namespace TesteAplication.Controllers
             }
             
         }
-
 
         [HttpPost]
         [Route("registerAdmin")]
@@ -96,9 +93,8 @@ namespace TesteAplication.Controllers
                 usuarioAcesso.Email = usuarioSAlvo.Email;
 
                 await userManager.AddClaimAsync(user, new Claim("EmployeerEmail", "_Acesso"));
-                await userManager.AddToRoleAsync(user, ("Administrator"));
 
-                var resultado = accessManager.GenerateToken(usuarioAcesso);
+                var resultado = accessManager.GenerateTokenAdmin(usuarioAcesso);
 
                 return Created($"registerUser/{resultado}", new { resultado });
             }
