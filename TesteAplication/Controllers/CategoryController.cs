@@ -17,12 +17,9 @@ namespace TesteAplication.Controllers
         //Esse metodo Adiciona Uma categoria
         [HttpPost]
         [Route("addCategory")]
-      
         public async Task<IActionResult> Post([FromServices]ICategoryRepository repositorio, [FromBody]AddCategorysModels categoryModel)
         {
-
             var prod = new Category(categoryModel.Name);
-            
             await repositorio.Add(prod);
             await repositorio.SaveChanges();
             return Created($"api/category/{prod.Name}", new { prod.Id });
@@ -44,9 +41,7 @@ namespace TesteAplication.Controllers
             await categoryRepository.GetById(id);
             await categoryRepository.Remove(id);
             await categoryRepository.SaveChanges();
-
             return Ok();
-
         }
         // Esse metodo altera um objeto e Salva No Banco
         [HttpPut]
@@ -55,14 +50,11 @@ namespace TesteAplication.Controllers
         public async Task<IActionResult> Put([FromServices]ICategoryRepository categoryRepository, [FromBody]UpdateCategoryModels upDateCategoryModels)
         {
             var result = await categoryRepository.GetById(upDateCategoryModels.Id);
-
             result.EditCategory(
             upDateCategoryModels.Name);
-
             categoryRepository.UpDate(result);
             await categoryRepository.SaveChanges();
             return Created($"api/category/{result.Id}", new { result.Id, result.Name });
-
         }
     }
 }

@@ -19,14 +19,13 @@ namespace Infra.Repository
         {
             _context = context;
         }
-        public Task<List<TResult>> ListAll<TResult>(Expression<Func<Product, TResult>> selector)
+        public Task<List<TResult>> ListAll<TResult>(Expression<Func<Product, TResult>> selector )
         {
             return DbSet.Select(selector).ToListAsync();
         }
         public Task<Product> Buscar(Guid id)
         {
             return DbSet.Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id);
-             
         }
         
     }

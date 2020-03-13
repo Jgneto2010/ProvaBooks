@@ -34,7 +34,7 @@ namespace TesteAplication.Controllers
         [Route("searchListProducts")]
         public async Task<IEnumerable<ListProductModel>> Get([FromServices] IProductRepository repositorio)
         {
-            return await repositorio.ListAll(x => new ListProductModel { Id = x.Id, Name = x.Name });
+            return await repositorio.ListAll(x => new ListProductModel { Id = x.Id, Name = x.Name  });
         }
         // Esse metodo altera um objeto e Salva No Banco
         [HttpPut]
@@ -43,12 +43,10 @@ namespace TesteAplication.Controllers
         public async Task<IActionResult> Put([FromServices]IProductRepository productRepository, [FromBody]UpDateProductModels upDateProductModels)
         {
             var result = await productRepository.GetById(upDateProductModels.Id);
-
             result.EditProduct(
             upDateProductModels.Name,
             upDateProductModels.Price,
             upDateProductModels.CategoryId);
-
             productRepository.UpDate(result);
             await productRepository.SaveChanges();
             return Created($"api/product/{result.Id}", new { result.Id, result.IdCategory, result.Price, result.Name });
@@ -63,9 +61,7 @@ namespace TesteAplication.Controllers
             await productRepository.GetById(id);
             await productRepository.Remove(id);
             await productRepository.SaveChanges();
-
             return Ok();
-
         }
         //Esse Metodo traz Um produto com sua categoria
         [HttpGet]
@@ -73,14 +69,12 @@ namespace TesteAplication.Controllers
         public async Task<IActionResult> Get([FromServices] IProductRepository repositorio, Guid id)
         {
             var rca = await repositorio.Buscar(id);
-
             return Ok(new GetProductCategory 
             { 
              IdCategory = rca.IdCategory,
              NameCategory = rca.Category.Name,
              Nameproducts = rca.Name
             });
-
         }
     }
 }

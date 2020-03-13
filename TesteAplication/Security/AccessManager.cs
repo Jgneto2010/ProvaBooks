@@ -40,18 +40,9 @@ namespace TesteAplication.Security
                     var resultadoLogin = _signInManager
                         .CheckPasswordSignInAsync(userIdentity, credenciais.Password, false)
                         .Result;
-
                     return resultadoLogin.Succeeded;
-                    //if (resultadoLogin.Succeeded)
-                    //{
-                    //    //// Verifica se o usuário em questão possui
-                    //    //// a role Acesso-APIProdutos
-                    //    //credenciaisValidas = _userManager.IsInRoleAsync(
-                    //    //    userIdentity, Roles.ROLE_API_PRODUTOS).Result;
-                    //}
                 }
             }
-
             return false;
         }
 
@@ -60,16 +51,14 @@ namespace TesteAplication.Security
             ClaimsIdentity identity = new ClaimsIdentity(
                 new GenericIdentity(user.UserID, "Login"),
                 new[] {
-                        //new Claim(JwtRegisteredClaimNames.Jti, user.UserID.ToString("N"),
                         new Claim(JwtRegisteredClaimNames.NameId, user.UserID),
-                        ////Nova Claim
                         new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 }
             ); ;
 
             DateTime dataCriacao = DateTime.Now;
             DateTime dataExpiracao = dataCriacao +
-                TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
+            TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
             var handler = new JwtSecurityTokenHandler();
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
@@ -99,29 +88,24 @@ namespace TesteAplication.Security
             ClaimsIdentity identity = new ClaimsIdentity(
                 new GenericIdentity(user.UserID, "Login"),
                 new[] {
-                        //new Claim(JwtRegisteredClaimNames.Jti, user.UserID.ToString("N"),
                         new Claim(JwtRegisteredClaimNames.NameId, user.UserID),
-                        ////Nova Claim
                         new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                        //Nova Role
                         new Claim(ClaimTypes.Role, "Administrator")
                 }
             ); ;
 
             DateTime dataCriacao = DateTime.Now;
             DateTime dataExpiracao = dataCriacao +
-                TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
-
+            TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
             var handler = new JwtSecurityTokenHandler();
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = _tokenConfigurations.Issuer,
-                Audience = _tokenConfigurations.Audience,
                 SigningCredentials = _signingConfigurations.SigningCredentials,
                 Subject = identity,
                 NotBefore = dataCriacao,
                 Expires = dataExpiracao
             });
+            
             var token = handler.WriteToken(securityToken);
 
             return new Token()

@@ -2,13 +2,8 @@
 {
     public class User
     {
-        public User()
-        {
-
-        }
         public string UserID { get; set; }
         public string Password { get; set; }
-        //Nova Claim
         public string Email { get; set; }
     }
 
@@ -16,7 +11,6 @@
     public static class Roles
     {
         public const string ROLE_API_PRODUTOS = "Acesso-APIProdutos";
-        
     }
 
     public class TokenConfigurations

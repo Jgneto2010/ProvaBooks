@@ -23,7 +23,7 @@ namespace TesteAplication
         {
             Configuration = configuration;
         }
-
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -32,7 +32,6 @@ namespace TesteAplication
             services.AddControllers();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-
 
             services.AddDbContext<Context>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("StringConnects")));
@@ -49,8 +48,6 @@ namespace TesteAplication
 
             var tokenConfigurations = new TokenConfigurations()
             {
-                Audience = "Teste",
-                Issuer = "Teste",
                 Seconds = 36000,
                 Teste = "Teste"
             };
@@ -60,18 +57,12 @@ namespace TesteAplication
             services.AddSingleton(tokenConfigurations);
             services.AddJwtSecurity(signingConfigurations, tokenConfigurations);
 
-
-
-            //Implementando a Claim
+            //Implementando a Claim e a Role
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("OnlyEmployeers", policy => policy.RequireClaim("EmployeerEmail"));
-                options.AddPolicy("OnlyEmployeers", policy => policy.RequireClaim("EmployeerName"));
                 options.AddPolicy("RequireAdministratorRole",policy => policy.RequireRole("Administrator"));
             });
-
-
-
 
             services.AddControllers();
            
@@ -97,8 +88,6 @@ namespace TesteAplication
                       new List<string>()
                     }
                 });
-
-
             });
         }
 
