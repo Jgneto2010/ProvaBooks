@@ -20,6 +20,7 @@ namespace TesteAplication.Controllers
         public object Post(
             [FromBody]User credenciais,
             [FromServices]AccessManager accessManager)
+
         {
             if (accessManager.ValidateCredentials(credenciais))
             {
@@ -34,6 +35,9 @@ namespace TesteAplication.Controllers
                 };
             }
         }
+
+
+
         //Esse metodo registra um usuário no sistema gerando seu token de acesso 
         [HttpPost]
         [Route("registerUser")]

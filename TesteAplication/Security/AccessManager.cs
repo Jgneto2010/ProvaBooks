@@ -38,7 +38,7 @@ namespace TesteAplication.Security
                 {
                     // Efetua o login com base no Id do usuário e sua senha
                     var resultadoLogin = _signInManager
-                        .CheckPasswordSignInAsync(userIdentity, credenciais.Password, false)
+                        .CheckPasswordSignInAsync(userIdentity, credenciais.Password, true)
                         .Result;
                     return resultadoLogin.Succeeded;
                 }
@@ -63,8 +63,8 @@ namespace TesteAplication.Security
             var handler = new JwtSecurityTokenHandler();
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = _tokenConfigurations.Issuer,
-                Audience = _tokenConfigurations.Audience,
+                //Issuer = _tokenConfigurations.Issuer,
+                //Audience = _tokenConfigurations.Audience,
                 SigningCredentials = _signingConfigurations.SigningCredentials,
                 Subject = identity,
                 NotBefore = dataCriacao,
